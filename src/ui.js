@@ -19,6 +19,7 @@ const toggleBtn = document.getElementById("toggleTemp");
 
 function displayCurrentWeather(data) {
 
+
     const { name, main, weather, wind } = data;
 
     currentTempCelsius = main.temp;
@@ -37,7 +38,7 @@ function displayCurrentWeather(data) {
         <p class="mt-2">Humidity: ${main.humidity}%</p>
         <p>Wind Speed: ${wind.speed} m/s</p>
     `;
-
+    currentWeatherDiv.classList.add("fade-in");
     currentWeatherDiv.classList.remove("hidden");
     toggleContainer.classList.remove("hidden");
 
@@ -75,6 +76,8 @@ function displayForecast(data) {
         `;
 
         forecastContainer.appendChild(card);
+        forecastContainer.classList.add("fade-in");
+
     });
 
     forecastContainer.classList.remove("hidden");
@@ -159,9 +162,7 @@ function updateBackground(condition) {
 }
 
 
-// ===============================
-// EXTREME TEMPERATURE ALERT
-// ===============================
+// EXTREME TEMPERATURE ALERT//
 
 function checkExtremeTemperature(temp) {
     if (temp > 40) {

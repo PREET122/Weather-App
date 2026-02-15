@@ -1,10 +1,10 @@
 
-// MAIN APPLICATION LOGIC
+// MAIN APPLICATION
 
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 const locationBtn = document.getElementById("locationBtn");
-const recentDropdown = document.getElementById("recentDropdown");
+//const recentDropdown = document.getElementById("recentDropdown");
 
 
 // SEARCH BY CITY
