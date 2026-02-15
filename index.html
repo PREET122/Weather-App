@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0ea5e9",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-400 to-indigo-600 min-h-screen flex flex-col items-center p-6 transition-all duration-500">
+
+    <!-- App Container -->
+    <div class="w-full max-w-4xl">
+
+        <!-- Header -->
+        <h1 class="text-3xl md:text-4xl font-bold text-white text-center mb-6">
+            🌦 Weather Forecast App
+        </h1>
+
+        <!-- Search Section -->
+        <div class="flex flex-col md:flex-row gap-3 justify-center mb-6">
+
+            <input 
+                id="cityInput"
+                type="text"
+                placeholder="Enter city name..."
+                class="p-3 rounded-lg w-full md:w-72 focus:outline-none"
+            />
+
+            <button 
+                id="searchBtn"
+                class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-sky-600 transition"
+            >
+                Search
+            </button>
+
+            <button 
+                id="locationBtn"
+                class="bg-white text-primary px-6 py-3 rounded-lg hover:bg-gray-200 transition"
+            >
+                Use My Location
+            </button>
+        </div>
+
+        <!-- Recent Searches Dropdown -->
+        <div id="recentContainer" class="mb-4 hidden">
+            <select id="recentDropdown" 
+                class="p-3 rounded-lg w-full md:w-72">
+            </select>
+        </div>
+
+        <!-- Error Box -->
+        <div id="errorBox"
+            class="hidden bg-red-500 text-white p-3 rounded-lg mb-4 text-center">
+        </div>
+
+        <!-- Current Weather -->
+        <div id="currentWeather"
+            class="bg-white/20 backdrop-blur-lg rounded-xl p-6 text-white text-center shadow-lg hidden">
+        </div>
+
+        <!-- Temperature Toggle -->
+        <div class="text-center mt-4 hidden" id="toggleContainer">
+            <button id="toggleTemp"
+                class="bg-white text-primary px-4 py-2 rounded-lg">
+                Switch to °F
+            </button>
+        </div>
+
+        <!-- 5 Day Forecast -->
+        <div id="forecastContainer"
+            class="flex overflow-x-auto gap-4 mt-6 hidden">
+        </div>
+
+    </div>
+
+    <!-- JS Files -->
+    <script src="src/js/config.js"></script>
+    <script src="src/js/weatherService.js"></script>
+    <script src="src/js/storage.js"></script>
+    <script src="src/js/ui.js"></script>
+    <script src="src/js/main.js"></script>
+
+</body>
+</html>
