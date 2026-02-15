@@ -29,7 +29,9 @@ function displayCurrentWeather(data) {
     const condition = weather[0].main;
 
     currentWeatherDiv.innerHTML = `
-        <h2 class="text-2xl font-bold mb-2">${name}</h2>
+        <h1 class="text-8xl  font-black font-extrabold tracking-tight">
+
+        <h2 class="text-3xl font-bold mb-2">${name}</h2>
         <img class="mx-auto"
             src="https://openweathermap.org/img/wn/${icon}@2x.png" />
         <p id="temperature" class="text-4xl font-bold">
@@ -41,6 +43,8 @@ function displayCurrentWeather(data) {
     currentWeatherDiv.classList.add("fade-in");
     currentWeatherDiv.classList.remove("hidden");
     toggleContainer.classList.remove("hidden");
+    
+
 
     updateBackground(condition);
     checkExtremeTemperature(main.temp);
